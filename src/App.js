@@ -14,7 +14,8 @@ function App() {
       const accounts = await web3.eth.requestAccounts();
       setAccount(accounts[0]);
     }
-  },[])
+    loadAccounts();
+  },[]);
 
 
   return (
