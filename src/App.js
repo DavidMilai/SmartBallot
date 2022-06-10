@@ -6,15 +6,28 @@ import Web3 from 'web3';
 function App() {
 
   const [account, setAccount] = useState();
+  const [balance, setBalance] = useState();
+  const [network, setNetwork] = useState();
+  const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
 
 
   useEffect(() => {
     async function loadAccounts(){
-      const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
       const accounts = await web3.eth.requestAccounts();
       setAccount(accounts[0]);
     }
-    loadAccounts();
+
+async function loadBalance(){
+  const network = await web3.eth.getNetworkType();
+  const balance = await web3.eth.getBalance();
+
+  setBalance(balance);
+  setNetwork(network);  
+
+}
+
+      loadAccounts();
+
   },[]);
 
 
@@ -25,6 +38,12 @@ function App() {
       </header>
       <p>
         your account: {account}
+      </p>
+      <p>
+        your network: {network}
+      </p>
+      <p>
+        your balance: {balance}
       </p>
     </div>
   );
