@@ -9,21 +9,25 @@ function App() {
   const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
 
   useEffect(() => {
-    async function loadAccounts() {
-      const accounts = await web3.eth.requestAccounts();
-      setAccount(accounts[0]);
-    }
-
-    async function loadBalance() {
-      const network = await web3.eth.getNetworkType();
-      const balance = await web3.eth.getBalance(account);
-
-      setBalance(balance);
-      setNetwork(network);
-    }
     loadAccounts();
+  });
+
+  useEffect(() => {
     loadBalance();
   }, [account]);
+
+  async function loadAccounts() {
+    const accounts = await web3.eth.requestAccounts();
+    setAccount(accounts[0]);
+  }
+
+  async function loadBalance() {
+    const network = await web3.eth.getNetworkType();
+    const balance = await web3.eth.getBalance(account);
+
+    setBalance(balance);
+    setNetwork(network);
+  };
 
   return (
     <div className="App">
