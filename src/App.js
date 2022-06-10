@@ -25,7 +25,7 @@ function App() {
     const network = await web3.eth.getNetworkType();
     const balance = await web3.eth.getBalance(account);
 
-    setBalance(balance/1e18);
+    setBalance((balance/1e18).toFixed(4));
     setNetwork(network);
   };
 
