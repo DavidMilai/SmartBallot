@@ -19,7 +19,7 @@ function App() {
 
 async function loadBalance(){
   const network = await web3.eth.getNetworkType();
-  const balance = await web3.eth.getBalance();
+  const balance = await web3.eth.getBalance(account);
 
   setBalance(balance);
   setNetwork(network);  
@@ -27,6 +27,7 @@ async function loadBalance(){
 }
 
       loadAccounts();
+      loadBalance();
 
   },[]);
 
