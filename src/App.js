@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Web3 from "web3";
+import Wallet from "./components/wallet";
 
 function App() {
   const [account, setAccount] = useState();
@@ -32,6 +33,7 @@ function App() {
   return (
     <div >
       <header>Smart Ballot</header>
+      <Wallet/>
       <p>your account: {account}</p>
       <p>your network: {network}</p>
       <p>your balance: {balance}</p>
