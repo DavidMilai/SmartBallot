@@ -30,8 +30,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">Smart Ballot</header>
+    <div >
+      <header>Smart Ballot</header>
       <p>your account: {account}</p>
       <p>your network: {network}</p>
       <p>your balance: {balance}</p>
