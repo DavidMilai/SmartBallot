@@ -7,6 +7,13 @@ function App() {
 
 const config ={
   network: [Rinkeby],
+  readOnlyChainId:Rinkeby.chainId,
+  readonlyUrls:{
+    [Rinkeby.chainId]:
+    [Kovan.chainId]:
+    [Mainnet.chainId]:
+  
+  },
   notification:{
     expiratonPeriod: 1000,
     checkInterval: 1000
