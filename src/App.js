@@ -1,9 +1,18 @@
 import "./App.css";
-import { DAppProvider } from "@usedapp/core";
+import { DAppProvider, Rinkeby, Kovan, Mainnet } from "@usedapp/core";
 
 import Wallet from "./components/wallet";
 
 function App() {
+
+const config ={
+  network: [Rinkeby],
+  notification:{
+    expiratonPeriod: 1000,
+    checkInterval: 1000
+  }
+}
+
   return (
     <DAppProvider>
       <div className="App">
