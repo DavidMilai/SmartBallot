@@ -9,9 +9,9 @@ const config ={
   network: [Rinkeby],
   readOnlyChainId:Rinkeby.chainId,
   readonlyUrls:{
-    [Rinkeby.chainId]:
-    [Kovan.chainId]:
-    [Mainnet.chainId]:
+    [Rinkeby.chainId]: ""
+    [Kovan.chainId]: ""
+    [Mainnet.chainId]:""
   
   },
   notification:{
