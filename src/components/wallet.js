@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import { useEthers } from "@usedapp/core";
 
 const wallet = () => {
-  return (
-    <div>dApp Wallet</div>
-  )
-}
+  const { activateBrowserWallet, account, deactivate } = useEthers()
 
-export default wallet
+  return (
+    <div>
+      <h3> dApp Wallet</h3>
+      {account ? (
+        <p>Your account: {account}</p>
+      ) : 
+        <p>
+          Connect Wallet.
+          <br></br>
+          <button onClick={()=>activateBrowserWallet()}>Connect Wallet</button>
+        </p>
+      }
+    </div>
+  );
+};
+
+export default wallet;
