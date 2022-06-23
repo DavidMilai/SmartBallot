@@ -10,9 +10,9 @@ const config ={
   network: [Rinkeby],
   readOnlyChainId:Rinkeby.chainId,
   readonlyUrls:{
-    [Rinkeby.chainId]: getDefaultProvider('mainnet')
-    [Kovan.chainId]: ""
-    [Mainnet.chainId]:""
+    [Mainnet.chainId]: getDefaultProvider('mainnet'),
+    [Kovan.chainId]: "https://kovan.infura.io/v3/4da288c10457420b8e3c4c87f3af8cec",
+    [Rinkeby.chainId]:"https://rinkeby.infura.io/v3/4da288c10457420b8e3c4c87f3af8cec"
   
   },
   notification:{
